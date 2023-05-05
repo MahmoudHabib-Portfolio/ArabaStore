@@ -84,6 +84,7 @@ nav {
     position: relative;
     background-color: #fff;
     height: 6.55em;
+    z-index: 250 !important;
 }
 
 .mainNavBar {
