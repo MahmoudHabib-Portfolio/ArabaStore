@@ -1,3 +1,11 @@
+$(document).ready(function(){
+
+    setTimeout(function(){
+        $(this).scrollTop(0);
+    }, 1);
+
+});
+
 $(document).ready(function() {
 
     $('.firstA').click(function() {
@@ -329,4 +337,25 @@ $(document).ready(function() {
         $('.SignIn').html('<a href="index.html" style="text-decoration:none;color:black;"><b class="sign">Sign In</b>&nbsp;&nbsp;<img src="images/home/password.png" alt="login" class="login" /></a>');
     }
     */
+
+    
+    //GSAP Preloading Frame
+    var dots = $('.Bslash');
+    //var loadBody = $('#loader');
+    var loadbck = $('#bodyframe');
+    var tloader = new TimelineMax({repeat: 2, onComplete:contentload});
+
+    tloader.staggerFromTo(dots, 0.6, {autoAlpha: 0, ease:Power2.easeOut}, {autoAlpha: 1, ease:Power2.easeOut}, 0.3);
+    
+    function contentload(){
+        var tLoaderOut = new TimelineLite({onComplete: ContentIn});
+        tLoaderOut.to(loadbck, 0.5, {autoAlpha: 0, ease:Power2.easeOut}, '+=0.3');
+    }
+
+    
+    function ContentIn() {
+     loadbck.css('display', 'none');
+    }
+    
+
 });
