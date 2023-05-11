@@ -3,6 +3,7 @@
     src: url('Calibri.ttf');
     font-family: 'ar-essence';
     src: url('ar-essence.ttf');
+     font-display: swap;
 }
 
 html,
